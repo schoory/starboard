@@ -1,0 +1,7 @@
+{
+  "port": 5000,
+  "jwtSecret": "StarboardJWTSecret",
+  "jwtRefresh": "StarboardJWTRefreshTokenSecret",
+  "mongoUri": "mongodb+srv://schoor:qwer1234@cluster0.xklp5.mongodb.net/app?retryWrites=true&w=majority",
+  "baseUrl": "http://localhost:3000"
+}
