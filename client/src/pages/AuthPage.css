@@ -1,0 +1,80 @@
+@import url(../index.css);
+
+.auth {
+  margin: 0 auto;
+  margin-top: 40vh;
+  transform: translateY(-50%);
+  max-width: 470px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  padding: 2rem 3rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.auth__title {
+  font-size: 22px;
+  color: var(--secondary-text);
+  font-weight: 400;
+}
+
+.auth__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0rem 1rem;
+}
+
+.auth__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth__register {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem;
+}
+
+.auth__link {
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-blue-text);
+  outline: none;
+}
+
+.auth__link_disabled {
+  color: var(--disable-text);
+  cursor: default;
+  pointer-events: none;
+}
+
+.auth__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--primary-blue-text);
+  transition: width 0.2s ease;
+}
+
+.auth__link:focus::after {
+  width: 100%;
+}
+
+.auth__link:hover {
+  background: transparent !important;
+}
+
+.auth__btn {
+  background: var(--primary-blue-text) !important;
+  font-size: 16px !important;
+  text-transform: none !important;
+}

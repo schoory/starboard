@@ -1,0 +1,333 @@
+
+.stargrid {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.stargrid__grid {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.stargrid__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.stargrid__action {
+  display: flex;
+  align-items: center;
+  text-transform: none !important;
+  border-right: 1px solid var(--border);
+  height: 100%;
+}
+
+.stargrid__action > button {
+  padding: 1rem 1.5rem !important;
+  border-radius: 0 !important;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--secondary-text);
+  text-transform: none !important;
+}
+
+.stargrid__action_active {
+  border-bottom: 1px solid var(--primary-blue-text);
+}
+
+.stargrid__action_active > button {
+  font-weight: 500;
+  color: var(--primary-blue-text);
+}
+
+.stargrid__action_search {
+  padding: .5rem 1rem;
+}
+
+.stargrid__action_search input {
+  padding: 0 !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+
+.stargrid__action_search ::after {
+  content: none !important;
+}
+
+.stargrid__action_search ::before {
+  content: none !important;
+}
+
+.stargrid__wrapper {
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--disable-text) transparent;
+}
+
+.stargrid__wrapper::-webkit-scrollbar {
+  width: 2px;
+}
+
+.stargrid__wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.stargrid__wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--disable-text);
+  border-radius: 2px;
+}
+
+.stargrid__list {
+  display: grid;
+  height: auto;
+  grid-template-rows: 1fr;
+}
+
+.stargrid__list_empty {
+  gap: 1rem 0;
+}
+
+.stargrid__list_empty > p {
+  grid-area: empty;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-text);
+}
+
+.stargrid__header {
+  display: flex;
+  align-items: center;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  padding: 1rem 1.5rem !important;
+  border-right: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  color: var(--secondary-text) !important;
+}
+
+.stargrid__header:last-child {
+  border-right: none !important;
+}
+
+.stargrid__header-checkbox {
+  padding: .5rem 0rem !important;
+}
+
+.stargrid__header-checkbox_active {
+  color: var(--primary-blue-text) !important;
+}
+
+.stargrid__header_clickable {
+  cursor: pointer;
+}
+
+.stargrid__cell {
+  display: flex;
+  align-items: center;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  padding: 1rem 1.5rem;
+  border-right: 1px solid var(--border) !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  white-space: nowrap;
+}
+
+.stargrid__cell:last-child {
+  border-right: none
+}
+
+.stargrid__cell-checkbox {
+  padding: .5rem 0rem !important;
+  color: var(--secondary-text) !important;
+}
+
+.stargrid__cell-checkbox_active {
+  padding: .5rem 0rem !important;
+  color: var(--primary-blue-text) !important;
+}
+
+.stargrid__cell-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stargrid__cell-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stargrid__cell-btn {
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  transition: all .25s !important;
+  color: var(--primary-blue-text) !important;
+  border: 1px solid transparent !important;
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+
+.stargrid__cell-btn:hover {
+  background: var(--docs-card-bg) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.dialog-text {
+  width: 100% !important;
+}
+
+.stargrid__pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-top: 1px solid var(--border);
+  align-items: center;
+}
+
+.stargrid__page {
+  margin: 0px 1rem;
+  color: var(--secondary-text);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: .2rem;
+}
+
+.stargrid__pagebtn {
+  border-radius: 0px !important;
+}
+
+.stargrid__btn {
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  transition: all .25s !important;
+  color: var(--primary-blue-text) !important;
+  border: 1px solid transparent !important;
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+
+.stargrid__btn:hover {
+  background: var(--docs-card-bg) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.stargrid__btn_fullWidth {
+  color: var(--primary-blue-text) !important;
+  width: fit-content !important;
+  height: auto !important;
+}
+
+.filter {
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.filter__row {
+  display: grid;
+  grid-template-columns: 200px 200px 300px;
+  gap: 0px 1rem;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.filter__label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-text);
+}
+
+.filter__input > div {
+  padding: 0 !important;
+}
+
+.filter__input input {
+  padding: 0.5rem 1rem !important;
+  font-size: 14px !important;
+}
+
+.filter__input fieldset {
+  transition: border 0.3s;
+}
+
+.filter__input :hover > fieldset {
+  border: 1px solid var(--secondary-text) !important;
+}
+
+.filter__input .Mui-focused fieldset {
+  border: 1px solid var(--primary-blue-text) !important;
+} 
+
+.filter__actions { 
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter__actions > button {
+  text-transform: none !important;
+  color: var(--primary-blue-text) !important;
+  margin-right: .5rem;
+}
+
+.filter__actions > button:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 900px) {
+
+  .filter__row {
+    grid-template-columns: repeat(1, 250px);
+    gap: 1rem;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+
+  .stargrid__action > button {
+    padding: .5rem 1rem !important;
+  }
+
+  .stargrid {
+    overflow: auto;
+    height: calc(100vh - 293px) !important;
+    width: 100vw;
+  }
+
+  .stargrid__grid {
+    border-radius: 0;
+  }
+
+  .stargrid__cell {
+    cursor: pointer;
+  }
+
+  .stargrid__cell:hover {
+    background: var(--disable-bg);
+  }
+
+  .stargrid__cell-controls {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .stargrid {
+    height: calc(100vh - 162px) !important;
+  }
+}

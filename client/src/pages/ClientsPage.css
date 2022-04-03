@@ -1,0 +1,357 @@
+
+.clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.clients__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0rem 1.5rem;
+}
+
+.clients__nav-title {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--secondary-text);
+  padding: 0.9rem 0rem;
+}
+
+.clients__loading {
+  align-self: center;
+  justify-self: center;
+  margin-top: 2rem;
+  padding: 3rem 8rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.clients__empty {
+  align-self: center;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 3rem 8rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.clients__empty > p {
+  margin-bottom: .5rem;
+}
+
+.clients__empty-btn {
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-blue-text);
+  outline: none;
+  padding: 0 !important;
+  font-size: 16px !important;
+  text-transform: none !important;
+}
+
+.clients__empty-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--primary-blue-text);
+  transition: all 0.3s ease;
+}
+
+.clients__empty-btn:focus::after {
+  width: 100%;
+  left: 0%;
+}
+
+.clients__empty-btn:hover {
+  background: transparent !important;
+}
+
+.clients__content {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 2rem !important;
+  gap: 2rem;
+}
+
+.clients__cards {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.clients__card {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 1.5rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  margin-right: 1rem;
+}
+
+.clients__card:last-child {
+  margin-right: 0;
+}
+
+.clients__card > h3 {
+  display: inline;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 10px;
+  color: var(--primary-text);
+}
+
+.clients__card > p {
+  display: inline;
+  font-size: 14px;
+}
+
+.clients__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.clients__icon > svg {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.clients__card_total {
+  color: var(--primary-blue-text)
+}
+
+.clients__card_total > .clients__icon {
+  background: var(--primary-blue-bg);
+}
+
+.clients__card_active {
+  color: var(--green-text);
+}
+
+.clients__card_active > .clients__icon {
+  background: var(--green-bg);
+}
+
+.clients__card_inactive {
+  color: var(--red-text);
+}
+
+.clients__card_inactive > .clients__icon {
+  background: var(--red-bg);
+}
+
+.clients__card_progress {
+  color: var(--gray-text);
+}
+
+.clients__card_progress > .clients__icon {
+  background: var(--gray-bg);
+}
+
+.clients__card_recent {
+  color: var(--violet-text);
+}
+
+.clients__card_recent small {
+  font-size: 10px;
+  margin-left: 5px;
+  color: var(--secondary-text);
+}
+
+.clients__card_recent > .clients__icon {
+  background: var(--violet-bg);
+}
+
+.clients__card_archived {
+  color: var(--dark-gray-text);
+}
+
+.clients__card_archived > .clients__icon {
+  background: var(--dark-gray-bg);
+}
+
+.clients__details {
+  position: absolute;
+  background: #fff;
+  width: 475px;
+  height: 595px;
+  top: 50%;
+  right: 4rem;
+  transform: translateY(-40%);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .05);
+  border: 1px solid var(--border);
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: all .2s ease-out;
+}
+
+.clients__details_active {
+  opacity: 1;
+  transform: translateY(-40%) scale(1.05);
+  pointer-events: all;
+}
+
+.clients__grid {
+  height: calc(100vh - 31vh) !important;
+}
+
+.cdetails {
+  padding: 3rem 2rem;
+}
+
+.cdetails__loading {
+  text-align: center;
+}
+
+.cdetails__title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.cdetails__item {
+  margin-bottom: 1rem;
+}
+
+.cdetails__label {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--secondary-text);
+  margin-bottom: .3rem;
+}
+
+.cdetails__value {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--primary-text);
+}
+
+.cdetails__value > small {
+  font-size: 16px;
+  color: var(--secondary-text);
+}
+
+.cdetails__value > a {
+  position: relative;
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--primary-text);
+}
+
+.cdetails__value > a::after {
+  content: '';
+  position: absolute;
+  background: var(--secondary-text);
+  height: 1px;
+  width: 100%;
+  left: 0;
+  bottom: -4px;
+}
+
+.cdetails__actions {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+}
+
+.cdetails__btn {
+  text-transform: none !important;
+  margin-bottom: .5rem !important;
+}
+
+.cdetails__btn_text {
+  align-items: flex-start !important;
+  padding: 6px 16px !important;
+  font-weight: 16px !important;
+  color: var(--secondary-text) !important;
+}
+
+.cdetails__close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 6;
+}
+
+.cdetails__close > button, .cdetails__close > svg {
+  color: var(--secondary-text) !important;
+  padding: 0 !important;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+}
+
+@media screen and (max-width: 1724px) {
+  .clients__grid {
+    height: calc(100vh - 40vh) !important;
+  }
+}
+
+@media screen and (max-width: 1024px) { 
+  .clients__grid {
+    height: calc(100vh - 460px) !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .clients__content {
+    padding: 0 !important;
+    background: #fff;
+    gap: 0;
+  }
+
+  .clients__details {
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .cdetails {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .clients__content > .cards {
+    grid-template-columns: repeat(6, auto);
+  }
+
+  .clients__content .cards__card_selected {
+    border: 1px solid var(--disable-text);
+  }
+
+  .clients__content .cards__card-icon {
+    margin-right: 0;
+  }
+
+  .clients__content span > span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-text);
+    background: #fff;
+    top: 125%;
+    left: 50%;
+  }
+}

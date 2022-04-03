@@ -1,0 +1,82 @@
+.starmenu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  background: #fff;
+  height: 100vh;
+  border-right: 1px solid var(--border);
+}
+
+.starmenu__logo {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.starmenu__logo > svg {
+  width: 150px;
+}
+
+.starmenu__logo > h1 {
+  font-size: 24px;
+}
+
+.starmenu__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.starmenu__btn {
+  justify-content: flex-start !important;
+  text-transform: none !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: var(--secondary-text) !important;
+}
+
+.starmenu__btn:hover {
+  background: transparent !important;
+  color: var(--primary-text) !important;
+}
+
+.starmenu__btn_active {
+  color: var(--primary-blue-text) !important;
+  pointer-events: none;
+}
+
+.starmenu__btn > span {
+  margin-right: 20px !important;
+}
+
+.starmenu__btn > span:last-child {
+  margin-right: 0px !important;
+}
+
+.starmenu__btn:disabled > span {
+  color: var(--disable-text) !important;
+  margin-right: 20px !important;
+}
+
+.starmenu__footer {
+  align-self: end;
+}
+
+.starmenu__burger {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 72px;
+  height: 72px;
+  pointer-events: none !important;
+}
+
+.starmenu__burger > button {
+  color: var(--secondary-text) !important;  
+  height: 100% !important;
+}
+
+@media screen and (max-width: 1040px) {
+  .starmenu__burger {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+}
