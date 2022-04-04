@@ -64,7 +64,6 @@ io.sockets.on("connection", (socket) => {
   })
 
   socket.on('director-join', (room) => {
-    console.log('room', room)
     socket.in(room.id).emit('client-update')
   })
 

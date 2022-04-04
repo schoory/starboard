@@ -308,7 +308,6 @@ export const Stargrid = (props) => {
     }
 
     if (mdScreen && columns.length > 7) {
-      console.log('first', `50px ${'1fr '.repeat(columns.filter(item => item.type === 'title').length)} ${columns.find(item => item.type === 'controls') ? 'calc(128px + 1.5rem)' : ''}`)
       return { gridTemplateColumns: `50px ${'1fr '.repeat(columns.filter(item => item.type === 'title').length)} ${columns.find(item => item.type === 'controls') ? 'calc(128px + 1.5rem)' : ''}` }
     }
 

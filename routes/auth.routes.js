@@ -41,7 +41,6 @@ router.post(
 
       res.status(200).json({ data: 'Пользователь создан' })
     } catch (e) {
-      console.log('e', e)
       res.status(500).json({ data: [{msg: 'Что-то пошло не так, попробуйте снова'}] })
     }
 })
@@ -107,7 +106,6 @@ router.post(
 
       res.json({ token, refreshToken, userId: candidate.id, userMembership: membership })
     } catch (e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так' }] })
     }
 })
@@ -143,7 +141,6 @@ router.post(
       res.status(200).json({ membership: 'none' })
     }
     catch (e) {
-      console.log(e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так' }] })
     }
 })

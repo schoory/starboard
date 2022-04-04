@@ -166,7 +166,6 @@ router.post(
       return res.status(200).json({ companyId: company._id })
 
     } catch(e) {
-      console.log('e', e)
       return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
 })
@@ -282,7 +281,6 @@ router.post('/inviteuser', auth, async (req, res) => {
     await notification.save()
     res.json({ msg: 'Приглашение отправлено' })
   } catch(e) {
-    console.log('e', e);
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })
@@ -369,7 +367,6 @@ router.post('/addshare', auth, async (req, res) => {
     return res.json({ msg: 'Акционер успешно добавлен' })
   }
   catch (e) {
-    console.log('e', e);
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })
@@ -462,15 +459,11 @@ router.post('/downloaddocument', auth, async (req, res) => {
   try {
     const { docId } = req.body
 
-    console.log('docId', docId)
-
     const document = await Document.findOne({ _id: docId })
 
     if (!document) {
       return res.status(400).json({ data: [{ msg: 'Файл не найден' }] })
     }
-
-    console.log('document', document)
 
     const filePath = document.pathToFile
 
@@ -755,13 +748,10 @@ router.post('/newshareholder',
 
       const shareholder = new Shareholder({ ...options, client: client._id })
 
-      console.log('shareholder', shareholder)
-
       await shareholder.save()
 
       res.status(200).json({ msg: 'Данные успешно сохранены' })
     } catch(e) {
-      console.log('e', e)
       return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }

@@ -21,7 +21,6 @@ import { AccountPage } from './pages/AccountPage'
 export const useRoutes = (isAuthenticated, userMembership) => {
 
   if (isAuthenticated) {
-    console.log('userMembership', userMembership)
     const routes = []
 
     switch (userMembership) {

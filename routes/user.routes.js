@@ -96,7 +96,6 @@ router.post('/saveuser',
       return res.status(200).json({ msg: 'Данные успешно изменены' })
 
     } catch (e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -302,7 +301,6 @@ router.post('/joinclient',
       res.json({ clientId: notification.from })
     }
     catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{msg: 'Что-то пошло не так, попробуйте снова'}] })
     }
 })
@@ -374,7 +372,6 @@ router.post('/getchats',
       }
       res.status(200).json({ chats: chatsArray })
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -411,7 +408,6 @@ router.post('/newchat',
 
       res.status(200).json({ msg: 'Беседа создана' })
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -428,7 +424,6 @@ router.post('/getmessages',
       const messages = await Message.find({ chatId: chatId }).sort({ date: -1 }).skip(messageSkip).limit(messageLimit)
       res.json({ messages: messages })
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -605,7 +600,6 @@ router.post('/getevents',
       
       res.status(200).json({ events: events })
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -625,7 +619,6 @@ router.post('/geteventsnotification',
       
       res.status(200).json({ notifications: notifications })
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -676,7 +669,6 @@ router.post('/createevent',
       
       res.status(200).json({ events: events })
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -723,7 +715,6 @@ router.post('/removeeventnotification',
       return res.status(200).json({ msg: 'Уведомление удалено' })
       
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -755,7 +746,6 @@ router.post('/createeventnotification',
       return res.status(200).json({ msg: 'Уведомление создано' })
       
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -791,7 +781,6 @@ router.post('/eventdeletenotification',
       return res.status(200).json({ msg: 'Уведомления созданы' })
       
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -820,7 +809,6 @@ router.post('/deleteevent',
       return res.status(200).json({ msg: 'Событие удалено' })
       
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }
@@ -889,7 +877,6 @@ router.post('/saveevent',
       
       res.status(200).json({ events: events })
     } catch(e) {
-      console.log('e', e)
       res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
     }
   }

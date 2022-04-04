@@ -128,7 +128,6 @@ router.post('/companyusers', auth, async (req, res) => {
     res.json({ users: company.users })
     
   } catch (e) {
-    console.log(e)
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })
@@ -200,7 +199,6 @@ router.post('/getclients', auth, async (req, res) => {
 
     res.json({ clients: company.clients })
   } catch(e) {
-    console.log(e)
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })
@@ -240,7 +238,6 @@ router.post('/getclientdetails', auth, async (req, res) => {
         
     return res.json({ client: client, mainContact: user })
   } catch(e) {
-    console.log(e)
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })
@@ -262,7 +259,6 @@ router.post('/changeinfo', auth, async (req, res) => {
         
     return res.status(200).json({ msg: 'Информация о компании успешно изменена' })
   } catch(e) {
-    console.log(e)
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })

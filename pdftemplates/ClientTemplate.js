@@ -5,7 +5,6 @@ module.exports = (client, directors, shareholders, mainContact) => {
   shareholders.map(shareholder => {
     summary += +shareholder.numOfShares
   })
-  console.log('summary', summary);
   return (`
   <!DOCTYPE html>
 <html lang="en">

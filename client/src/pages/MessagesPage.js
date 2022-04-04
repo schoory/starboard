@@ -358,7 +358,6 @@ export const MessagesPage = () => {
     }, {
       Authorization: `Bearer ${auth.token}`
     }).then(data => {
-      console.log('data', data)
       setNewChat({ visible: true, companies: data.data })
     })
   }

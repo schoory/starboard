@@ -26,7 +26,6 @@ router.post('/inviteinfo', async (req, res) => {
     return res.status(200).json({ inviteId: invite._id })
 
   } catch(e) {
-    console.log(e)
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })
@@ -51,7 +50,6 @@ router.post('/verifyinvite', async (req, res) => {
     return res.status(200).json({ status: 'active' })
 
   } catch(e) {
-    console.log(e)
     return res.status(500).json({ data: [{ msg: 'Что-то пошло не так, попробуйте снова' }] })
   }
 })
