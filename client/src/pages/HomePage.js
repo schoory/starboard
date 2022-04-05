@@ -490,15 +490,27 @@ export const HomePage = () => {
                             >
                               <div>
                                 <p>Имя</p>
-                                <p>{ `${user.firstName} ${user.lastName}` }</p>
+                                <Tooltip title={`${user.firstName} ${user.lastName}`}>
+                                  <Typography noWrap>
+                                    { `${user.firstName} ${user.lastName}` }
+                                  </Typography>
+                                </Tooltip>
                               </div>
                               <div>
                                 <p>Email</p>
-                                <p>{ user.email ? user.email : 'не указано' }</p>
+                                <Tooltip title={user.email ? user.email : 'не указано'}>
+                                  <Typography noWrap>
+                                    { user.email ? user.email : 'не указано' }
+                                  </Typography>
+                                </Tooltip>
                               </div>
                               <div>
                                 <p>Телефон</p>
-                                <p>{ user.phoneNumber ? user.phoneNumber : 'не указано' }</p>
+                                <Tooltip title={user.phoneNumber ? user.phoneNumber : 'не указано'}>
+                                  <Typography noWrap>
+                                    { user.phoneNumber ? user.phoneNumber : 'не указано' }
+                                  </Typography>
+                                </Tooltip>
                               </div>
                               <div className="company__users-item-controls" data-id={user._id}>
                                 {

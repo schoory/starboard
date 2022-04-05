@@ -16,6 +16,7 @@ import { RedirectPage } from './pages/RedirectPage'
 import { ClientOnlyPage } from './pages/ClientOnlyPage'
 
 import { AccountPage } from './pages/AccountPage'
+import { AboutPage } from './pages/AboutPage'
 
 
 export const useRoutes = (isAuthenticated, userMembership) => {
@@ -29,6 +30,7 @@ export const useRoutes = (isAuthenticated, userMembership) => {
           <Routes key='1'>
             <Route path="/company" exact element={<CreateCompanyPage />} />
             <Route path="/account" exact element={<AccountPage />}/>
+            <Route path="/about" exact element={<AboutPage />} />
             <Route path="/*" exact element={<Navigate replace to="/company" />} />
           </Routes>
         )
@@ -42,6 +44,7 @@ export const useRoutes = (isAuthenticated, userMembership) => {
             <Route path="/client/:id" element={<ClientPage />} />
             <Route path="/events" exact element={<EventsPage />} />
             <Route path="/messages" exact element={<MessagesPage />} />
+            <Route path="/about" exact element={<AboutPage />} />
             <Route path="/*" element={<Navigate replace to='/company' />} />
           </Routes>
         )
@@ -53,6 +56,7 @@ export const useRoutes = (isAuthenticated, userMembership) => {
             <Route path="/account" exact element={<AccountPage />}/>
             <Route path="/messages" exact element={<MessagesPage />} />
             <Route path="/events" element={<Navigate replace to='/client?section=events' />} />
+            <Route path="/about" exact element={<AboutPage />} />
             <Route path="/*" element={<Navigate replace to='/client' />} />
           </Routes>
         )
@@ -63,6 +67,7 @@ export const useRoutes = (isAuthenticated, userMembership) => {
         routes.push(
           <Routes key='1'>
             <Route path="/company" exact element={<CreateCompanyPage />} />
+            <Route path="/about" exact element={<AboutPage />} />
             <Route path="/*" exact element={<Navigate replace to="/company" />} />
           </Routes>
         )
@@ -83,6 +88,7 @@ export const useRoutes = (isAuthenticated, userMembership) => {
         <NavbarNonAuth />
         <Routes>
           <Route path="/auth" exact element={<AuthPage />} />
+          <Route path="/about" exact element={<AboutPage />} />
           <Route path="/register" exact element={<RegisterPage />} />
           <Route path="/i/:id" element={<RedirectPage />} />
           <Route path="/client" exact element={<InvitePage />} />
