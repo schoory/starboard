@@ -389,8 +389,24 @@ router.post('/uploaddocument', [auth, upload.single('file')], async (req, res) =
     const { title, description, section, tags, owner, companyId, clientId } = req.body
     const file = req.file
     const tagsArr = tags.split(',')
+    const companyFilePath = __dirname.replace('\\routes', '') + `\\files\\companies\\${companyId}`
     const filePath = __dirname.replace('\\routes', '') + `\\files\\companies\\${companyId}\\${clientId}`
   
+    fs.mkdir(__dirname.replace('\\routes', '') + `\\files`, error => {
+      if (error && error.code !== 'EEXIST') {
+        return res.status(500).json({ data: [{ msg: 'Невозможно создать директорию для файлов' }] })
+      }
+    })
+    fs.mkdir(__dirname.replace('\\routes', '') + `\\files\\companies`, error => {
+      if (error && error.code !== 'EEXIST') {
+        return res.status(500).json({ data: [{ msg: 'Невозможно создать директорию для компаний' }] })
+      }
+    })
+    fs.mkdir(companyFilePath, error => {
+      if (error && error.code !== 'EEXIST') {
+        return res.status(500).json({ data: [{ msg: 'Невозможно создать директорию для компании' }] })
+      }
+    })
     fs.mkdir(filePath, error => {
       if (error && error.code !== 'EEXIST') {
         return res.status(500).json({ data: [{ msg: 'Невозможно создать директорию для клиента' }] })
