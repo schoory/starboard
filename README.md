@@ -1,5 +1,6 @@
 # Starboard
 Приложение для аутсорсинговых компаний, предоставляющих бизнес-аналитику.
+
 Стэк: NodeJS, express, React, MongoDB, multer, Material UI
 ___
 ## Установка
